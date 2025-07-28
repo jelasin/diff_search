@@ -11,7 +11,8 @@ STATIC_TARGET = md5_scanner_static
 MAIN_SRC = main.c
 LIB_SRCS = $(LIBDIR)/calc_md5/calc_md5.c \
            $(LIBDIR)/list_file/list_file.c \
-           $(LIBDIR)/cJSON/cJSON.c
+           $(LIBDIR)/cJSON/cJSON.c \
+           $(LIBDIR)/json_diff/json_diff.c
 
 # Object files
 MAIN_OBJ = $(MAIN_SRC:.c=.o)
