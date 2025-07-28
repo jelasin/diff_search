@@ -14,41 +14,6 @@
 
 ## 项目结构
 
-```text
-diff_search/
-├── main.c              # 主程序 - MD5扫描器
-├── makefile            # 主项目构建文件
-├── README.md           # 项目说明文档
-├── diff-ui/            # GTK+ GUI查看器
-│   ├── main.c          # GUI程序源码
-│   ├── Makefile        # GUI构建文件
-│   ├── README.md       # GUI说明文档
-│   └── *.json          # 测试和演示文件
-├── lib/                # 共享库
-│   ├── calc_md5/       # MD5计算库
-│   ├── cJSON/          # JSON处理库
-│   ├── json_diff/      # JSON对比库
-│   └── list_file/      # 文件列表库
-└── .vscode/            # VS Code配置文件
-diff_search/
-├── main.c                    # 主程序
-├── makefile                  # 构建脚本
-├── README.md                 # 项目文档
-└── lib/                      # 库文件目录
-    ├── calc_md5/             # MD5计算模块
-    │   ├── calc_md5.h
-    │   └── calc_md5.c
-    ├── list_file/            # 文件遍历模块
-    │   ├── list_file.h
-    │   └── list_file.c
-    ├── json_diff/            # JSON对比模块
-    │   ├── json_diff.h
-    │   └── json_diff.c
-    └── cJSON/                # JSON处理库
-        ├── cJSON.h
-        └── cJSON.c
-```
-
 ## 编译和安装
 
 ### 编译主程序（MD5扫描器）
