@@ -1,23 +1,35 @@
 # MD5 Directory Scanner
 
-一个用C语言编写的命令行工具，用于递归计算指定目录及其子目录下所有文件的MD5值，并将结果以JSON格式输出。支持JSON文件对比功能，可以找出两个目录扫描结果中相同和不同的文件。
+一个用C语言编写的文件比较工具套件，包含命令行扫描器和图形界面查看器。可以递归计算目录下所有文件的MD5值，并对比两个目录的差异，提供JSON格式输出和GUI可视化查看。
 
 ## 功能特性
 
-- 递归遍历指定目录及其所有子目录
-- 计算每个文件的MD5哈希值
-- 将文件路径和MD5值保存为JSON格式
+- **命令行扫描器**: 递归遍历目录计算MD5哈希值
+- **JSON文件对比**: 对比两个目录扫描结果，找出相同和不同的文件
+- **图形界面查看器**: 使用GTK+开发的GUI工具，可视化查看比较结果
 - 支持输出到文件或标准输出
 - 包含扫描统计信息和时间戳
-- **新增**: JSON文件对比功能
-  - 对比两个JSON文件中的MD5哈希值
-  - 导出相同哈希值的文件到same.json
-  - 导出不同/唯一哈希值的文件到diff.json
 - 错误处理和报告
+- 支持静态编译，便于分发
 
 ## 项目结构
 
 ```text
+diff_search/
+├── main.c              # 主程序 - MD5扫描器
+├── makefile            # 主项目构建文件
+├── README.md           # 项目说明文档
+├── diff-ui/            # GTK+ GUI查看器
+│   ├── main.c          # GUI程序源码
+│   ├── Makefile        # GUI构建文件
+│   ├── README.md       # GUI说明文档
+│   └── *.json          # 测试和演示文件
+├── lib/                # 共享库
+│   ├── calc_md5/       # MD5计算库
+│   ├── cJSON/          # JSON处理库
+│   ├── json_diff/      # JSON对比库
+│   └── list_file/      # 文件列表库
+└── .vscode/            # VS Code配置文件
 diff_search/
 ├── main.c                    # 主程序
 ├── makefile                  # 构建脚本
@@ -37,19 +49,79 @@ diff_search/
         └── cJSON.c
 ```
 
-## 编译
+## 编译和安装
 
-使用make命令编译项目：
+### 编译主程序（MD5扫描器）
 
 ```bash
 make
 ```
 
-或者查看所有可用的make目标：
+### 编译GUI查看器
 
 ```bash
-make help
+cd diff-ui
+make
 ```
+
+编译静态版本（无需GTK运行时依赖）：
+
+```bash
+cd diff-ui
+make static
+```
+
+### 安装依赖（GUI所需）
+
+Ubuntu/Debian:
+
+```bash
+sudo apt-get install libgtk-3-dev pkg-config build-essential
+```
+
+CentOS/RHEL:
+
+```bash
+sudo yum groupinstall "Development Tools"
+sudo yum install gtk3-devel pkgconfig
+```
+
+## 快速开始
+
+### 1. 扫描目录并生成JSON
+
+```bash
+# 扫描当前目录
+./md5_scanner
+
+# 扫描指定目录并输出到文件
+./md5_scanner /path/to/directory -o output.json
+
+# 扫描两个目录并对比
+./md5_scanner /path/to/dir1 -o dir1.json
+./md5_scanner /path/to/dir2 -o dir2.json
+./md5_scanner -c dir1.json dir2.json
+```
+
+### 2. 使用GUI查看器
+
+```bash
+cd diff-ui
+
+# 直接运行，然后通过菜单打开文件
+./diff-viewer
+
+# 指定JSON文件运行
+./diff-viewer diff.json
+```
+
+## GUI界面功能
+
+- **双栏显示**: 左右分别显示两个目录的文件
+- **实时搜索**: 顶部搜索框按文件名过滤结果
+- **自动去重**: 自动处理重复文件（如busybox符号链接）
+- **状态标识**: 清晰显示文件比较状态
+- **详细信息**: 显示文件路径、MD5值和比较状态
 
 ## 使用方法
 
@@ -202,6 +274,10 @@ make help
   ]
 }
 ```
+
+![alt text](img/display_image.png)
+
+![alt text](img/search_image.png)
 
 ## 技术实现
 

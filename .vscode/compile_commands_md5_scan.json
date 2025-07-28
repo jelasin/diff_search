@@ -1,0 +1,87 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-std=c99",
+      "-O2",
+      "-I.",
+      "-c",
+      "-o",
+      "main.o",
+      "main.c"
+    ],
+    "directory": "/root/code/diff_search",
+    "file": "/root/code/diff_search/main.c",
+    "output": "/root/code/diff_search/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-std=c99",
+      "-O2",
+      "-I.",
+      "-c",
+      "-o",
+      "lib/calc_md5/calc_md5.o",
+      "lib/calc_md5/calc_md5.c"
+    ],
+    "directory": "/root/code/diff_search",
+    "file": "/root/code/diff_search/lib/calc_md5/calc_md5.c",
+    "output": "/root/code/diff_search/lib/calc_md5/calc_md5.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-std=c99",
+      "-O2",
+      "-I.",
+      "-c",
+      "-o",
+      "lib/list_file/list_file.o",
+      "lib/list_file/list_file.c"
+    ],
+    "directory": "/root/code/diff_search",
+    "file": "/root/code/diff_search/lib/list_file/list_file.c",
+    "output": "/root/code/diff_search/lib/list_file/list_file.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-std=c99",
+      "-O2",
+      "-I.",
+      "-c",
+      "-o",
+      "lib/cJSON/cJSON.o",
+      "lib/cJSON/cJSON.c"
+    ],
+    "directory": "/root/code/diff_search",
+    "file": "/root/code/diff_search/lib/cJSON/cJSON.c",
+    "output": "/root/code/diff_search/lib/cJSON/cJSON.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-std=c99",
+      "-O2",
+      "-I.",
+      "-c",
+      "-o",
+      "lib/json_diff/json_diff.o",
+      "lib/json_diff/json_diff.c"
+    ],
+    "directory": "/root/code/diff_search",
+    "file": "/root/code/diff_search/lib/json_diff/json_diff.c",
+    "output": "/root/code/diff_search/lib/json_diff/json_diff.o"
+  }
+]
