@@ -210,20 +210,6 @@ cd diff-ui
     }
   ]
 }
-    "total_files": 15,
-    "errors": 0
-  },
-  "files": [
-    {
-      "path": "/absolute/path/to/file1.txt",
-      "md5": "5d41402abc4b2a76b9719d911017c592"
-    },
-    {
-      "path": "/absolute/path/to/file2.txt",
-      "md5": "7d865e959b2466918c9863afca942d0f"
-    }
-  ]
-}
 ```
 
 ![alt text](img/display_image.png)
