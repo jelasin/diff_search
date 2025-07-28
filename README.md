@@ -24,15 +24,7 @@ make
 ### 编译GUI查看器
 
 ```bash
-cd diff-ui
-make
-```
-
-编译静态版本（无需GTK运行时依赖）：
-
-```bash
-cd diff-ui
-make static
+make diff-ui
 ```
 
 ### 安装依赖（GUI所需）
@@ -60,11 +52,6 @@ sudo yum install gtk3-devel pkgconfig
 
 # 扫描指定目录并输出到文件
 ./md5_scanner /path/to/directory -o output.json
-
-# 扫描两个目录并对比
-./md5_scanner /path/to/dir1 -o dir1.json
-./md5_scanner /path/to/dir2 -o dir2.json
-./md5_scanner -c dir1.json dir2.json
 ```
 
 ### 2. 使用GUI查看器
